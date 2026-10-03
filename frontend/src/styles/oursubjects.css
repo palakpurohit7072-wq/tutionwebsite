@@ -1,0 +1,725 @@
+/* =========================================
+   SUBJECTS SECTION
+========================================= */
+
+.subjects-section {
+  background-color: #ffffff;
+}
+
+
+/* =========================================
+   BADGE
+========================================= */
+
+.subjects-badge {
+  display: inline-block;
+
+  background-color: #e8f5e9;
+  color: #1b5e20;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  padding: 6px 16px;
+
+  border-radius: 20px;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.subjects-heading {
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  color: #14532d;
+}
+
+
+/* =========================================
+   SUBJECT CARD
+========================================= */
+
+.subject-card {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+
+  position: relative;
+
+  background-color: #ffffff;
+
+  border: 1px solid #eef1ee;
+
+  border-radius: 14px;
+
+  padding: 28px 20px;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  transform:
+    perspective(900px)
+    rotateX(var(--rotate-x))
+    rotateY(var(--rotate-y))
+    translateY(0)
+    scale(1);
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.18s ease-out,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+  opacity: 0;
+
+  animation:
+    subjectCardEnter
+    0.65s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    var(--card-delay)
+    forwards;
+}
+
+
+/* =========================================
+   DESKTOP HOVER
+========================================= */
+
+@media (min-width: 768px) {
+
+  .subject-card:hover {
+
+    border-color:
+      rgba(34, 160, 107, 0.30);
+
+    box-shadow:
+      0 18px 40px rgba(20, 90, 50, 0.12),
+      0 5px 15px rgba(20, 90, 50, 0.06);
+
+    transform:
+      perspective(900px)
+      rotateX(var(--rotate-x))
+      rotateY(var(--rotate-y))
+      translateY(-7px)
+      scale(1.015);
+  }
+
+}
+
+
+/* =========================================
+   SPOTLIGHT
+========================================= */
+
+.card-spotlight {
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  left: var(--mouse-x);
+  top: var(--mouse-y);
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+
+  /*
+    Bright center
+    Dark green middle
+    Soft green outer glow
+  */
+
+  background:
+    radial-gradient(
+      circle,
+
+      rgba(255, 255, 255, 0.30) 0%,
+
+      rgba(20, 110, 65, 0.42) 18%,
+
+      rgba(20, 110, 65, 0.25) 38%,
+
+      rgba(20, 110, 65, 0.12) 55%,
+
+      transparent 75%
+    );
+
+  opacity: 0;
+
+  transition:
+    opacity 0.25s ease,
+    left 0.08s linear,
+    top 0.08s linear;
+
+  z-index: 0;
+}
+
+
+/* Desktop spotlight */
+
+@media (min-width: 768px) {
+
+  .subject-card:hover .card-spotlight {
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================
+   SHINE / GLARE
+========================================= */
+
+.card-glare {
+
+  position: absolute;
+
+  width: 160%;
+  height: 50%;
+
+  top: -20%;
+
+  left: -130%;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      110deg,
+
+      transparent 35%,
+
+      rgba(255, 255, 255, 0.55) 50%,
+
+      transparent 65%
+    );
+
+  transform:
+    rotate(8deg);
+
+  opacity: 0;
+
+  z-index: 1;
+}
+
+
+/* Desktop shine */
+
+@media (min-width: 768px) {
+
+  .subject-card:hover .card-glare {
+
+    opacity: 1;
+
+    animation:
+      cardShine
+      0.75s
+      ease
+      forwards;
+  }
+
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.subject-icon {
+
+  position: relative;
+
+  width: 56px;
+  height: 56px;
+
+  margin:
+    0 auto 16px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 1.5rem;
+
+  color: #ffffff;
+
+  transform:
+    translateZ(30px)
+    scale(1);
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+
+  z-index: 2;
+}
+
+
+/* Desktop icon hover */
+
+@media (min-width: 768px) {
+
+  .subject-card:hover .subject-icon {
+
+    transform:
+      translateZ(40px)
+      scale(1.10);
+
+    box-shadow:
+      0 10px 24px rgba(0, 0, 0, 0.14);
+  }
+
+}
+
+
+/* =========================================
+   EMOJI
+========================================= */
+
+.subject-icon span {
+
+  display: block;
+
+  transition:
+    transform 0.35s ease;
+}
+
+
+@media (min-width: 768px) {
+
+  .subject-card:hover
+  .subject-icon span {
+
+    transform:
+      scale(1.08)
+      rotate(-4deg);
+  }
+
+}
+
+
+/* =========================================
+   ICON COLORS
+========================================= */
+
+.subject-icon-red {
+  background-color: #ef4444;
+}
+
+.subject-icon-green {
+  background-color: #22a06b;
+}
+
+.subject-icon-blue {
+  background-color: #2f7bd6;
+}
+
+.subject-icon-orange {
+  background-color: #f5a524;
+}
+
+.subject-icon-purple {
+  background-color: #8b5cf6;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.subject-title {
+
+  position: relative;
+
+  z-index: 2;
+
+  font-weight: 700;
+
+  color: #1a2e1a;
+
+  margin-bottom: 4px;
+
+  transform:
+    translateZ(20px);
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* Desktop title */
+
+@media (min-width: 768px) {
+
+  .subject-card:hover .subject-title {
+
+    color: #14532d;
+
+    transform:
+      translateZ(25px)
+      translateY(-2px);
+  }
+
+}
+
+
+/* =========================================
+   TAGLINE
+========================================= */
+
+.subject-tagline {
+
+  position: relative;
+
+  z-index: 2;
+
+  font-size: 0.85rem;
+
+  color: #6b7a70;
+
+  transform:
+    translateZ(15px);
+
+  transition:
+    color 0.3s ease;
+}
+
+
+/* Desktop tagline */
+
+@media (min-width: 768px) {
+
+  .subject-card:hover .subject-tagline {
+    color: #50645a;
+  }
+
+}
+
+
+/* =========================================
+   BOTTOM GLOW
+========================================= */
+
+.card-bottom-glow {
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: -35px;
+
+  width: 120px;
+  height: 65px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(34, 160, 107, 0.18);
+
+  filter:
+    blur(24px);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+
+/* Desktop bottom glow */
+
+@media (min-width: 768px) {
+
+  .subject-card:hover .card-bottom-glow {
+
+    opacity: 1;
+
+    transform:
+      translateX(-50%)
+      scale(1.3);
+  }
+
+}
+
+
+/* =========================================
+   CARD ENTRY
+========================================= */
+
+@keyframes subjectCardEnter {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      perspective(900px)
+      translateY(25px)
+      scale(0.96);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      perspective(900px)
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================
+   SHINE ANIMATION
+========================================= */
+
+@keyframes cardShine {
+
+  from {
+    left: -130%;
+  }
+
+  to {
+    left: 130%;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .subjects-heading {
+    font-size: 1.6rem;
+  }
+
+
+  .subject-card {
+
+    padding: 20px 12px;
+
+    /*
+      Mobile par 3D tilt disable.
+      Touch screen par natural interaction.
+    */
+
+    transform:
+      perspective(900px)
+      rotateX(0deg)
+      rotateY(0deg)
+      translateY(0)
+      scale(1);
+
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+
+  /* =====================================
+     MOBILE TAP ACTIVE
+  ===================================== */
+
+  .subject-card.mobile-active {
+
+    transform:
+      perspective(900px)
+      translateY(-6px)
+      scale(1.025);
+
+    border-color:
+      rgba(34, 160, 107, 0.40);
+
+    box-shadow:
+      0 14px 32px rgba(20, 90, 50, 0.16);
+  }
+
+
+  /* =====================================
+     MOBILE SPOTLIGHT
+  ===================================== */
+
+  .subject-card.mobile-active
+  .card-spotlight {
+
+    opacity: 1;
+
+    /*
+      Mobile par spotlight center mein
+      clearly visible rahe.
+    */
+
+    left: 50%;
+    top: 42%;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.05);
+  }
+
+
+  /* =====================================
+     MOBILE ICON
+  ===================================== */
+
+  .subject-card.mobile-active
+  .subject-icon {
+
+    transform:
+      translateZ(40px)
+      scale(1.10);
+
+    box-shadow:
+      0 10px 24px rgba(0, 0, 0, 0.14);
+  }
+
+
+  /* =====================================
+     MOBILE EMOJI
+  ===================================== */
+
+  .subject-card.mobile-active
+  .subject-icon span {
+
+    transform:
+      scale(1.10)
+      rotate(-4deg);
+  }
+
+
+  /* =====================================
+     MOBILE TITLE
+  ===================================== */
+
+  .subject-card.mobile-active
+  .subject-title {
+
+    color:
+      #14532d;
+  }
+
+
+  /* =====================================
+     MOBILE BOTTOM GLOW
+  ===================================== */
+
+  .subject-card.mobile-active
+  .card-bottom-glow {
+
+    opacity: 1;
+
+    transform:
+      translateX(-50%)
+      scale(1.30);
+  }
+
+
+  /* =====================================
+     MOBILE SHINE
+  ===================================== */
+
+  .subject-card.mobile-active
+  .card-glare {
+
+    opacity: 1;
+
+    animation:
+      cardShine
+      0.75s
+      ease
+      forwards;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .subject-card {
+    padding: 18px 8px;
+  }
+
+
+  .subject-icon {
+
+    width: 52px;
+    height: 52px;
+
+    font-size: 1.4rem;
+  }
+
+
+  .subject-title {
+    font-size: 16px;
+  }
+
+
+  .subject-tagline {
+    font-size: 11px;
+  }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .subject-card {
+
+    animation: none;
+
+    opacity: 1;
+
+    transform: none !important;
+
+    transition: none;
+  }
+
+
+  .card-spotlight,
+  .card-glare {
+
+    display: none;
+  }
+
+}

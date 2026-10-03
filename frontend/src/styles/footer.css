@@ -1,0 +1,652 @@
+/* =========================================================
+   SPROUTING MINDS FOOTER
+   ========================================================= */
+
+.sm-footer {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(116, 190, 135, 0.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(116, 190, 135, 0.1),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f3faf5 0%,
+      #ffffff 48%,
+      #eef8f1 100%
+    );
+
+  border-top: 1px solid #dfece3;
+
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+
+/* =========================================================
+   DECORATIVE SHAPES
+   ========================================================= */
+
+.sm-footer-shape {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0.45;
+}
+
+.sm-shape-one {
+  width: 180px;
+  height: 180px;
+
+  left: -90px;
+  bottom: 30px;
+
+  border: 25px solid #dcefe1;
+}
+
+.sm-shape-two {
+  width: 140px;
+  height: 140px;
+
+  right: -65px;
+  top: 25px;
+
+  border: 20px solid #e0f2e4;
+}
+
+
+/* =========================================================
+   DECORATIVE LEAVES
+   ========================================================= */
+
+.sm-footer-leaf {
+  position: absolute;
+
+  pointer-events: none;
+  user-select: none;
+
+  opacity: 0.16;
+
+  z-index: 0;
+}
+
+.sm-leaf-one {
+  left: 10px;
+  top: 25px;
+
+  font-size: 72px;
+
+  transform: rotate(-25deg);
+}
+
+.sm-leaf-two {
+  right: 12px;
+  bottom: 45px;
+
+  font-size: 65px;
+
+  transform: rotate(18deg);
+}
+
+
+/* =========================================================
+   MAIN FOOTER
+   ========================================================= */
+
+.sm-footer-main {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  align-items: stretch;
+
+  gap: 45px;
+
+  padding: 55px 0 45px;
+}
+
+
+/* =========================================================
+   BRAND CARD
+   ========================================================= */
+
+.sm-footer-brand-card {
+  position: relative;
+
+  padding: 30px 32px;
+
+  border: 1px solid #d9e9de;
+
+  border-radius: 26px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  box-shadow:
+    0 12px 35px rgba(31, 122, 61, 0.07),
+    0 2px 8px rgba(31, 122, 61, 0.03);
+
+  backdrop-filter: blur(5px);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.sm-footer-brand-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 16px 40px rgba(31, 122, 61, 0.1),
+    0 3px 10px rgba(31, 122, 61, 0.04);
+}
+
+
+/* =========================================================
+   BRAND TOP
+   ========================================================= */
+
+.sm-footer-brand-top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   LOGO BOX
+   ========================================================= */
+
+.sm-footer-logo-box {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 70px;
+  height: 70px;
+
+  flex-shrink: 0;
+
+  border-radius: 21px;
+
+  background: linear-gradient(
+    145deg,
+    #e8f7ec,
+    #dff1e4
+  );
+
+  border: 1px solid #d2e8d8;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 5px 15px rgba(31, 122, 61, 0.08);
+}
+
+.sm-footer-logo-box svg {
+  transition: transform 0.3s ease;
+}
+
+.sm-footer-brand-card:hover .sm-footer-logo-box svg {
+  transform: rotate(-4deg) translateY(-2px);
+}
+
+
+/* =========================================================
+   BRAND TEXT
+   ========================================================= */
+
+.sm-brand {
+  margin: 0;
+
+  color: #0f3d2a;
+
+  font-size: 1.65rem;
+
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+.sm-brand span {
+  color: #2e8b4f;
+}
+
+.sm-tagline {
+  margin: 6px 0 0;
+
+  color: #63756b;
+
+  font-size: 0.78rem;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.sm-footer-description {
+  max-width: 560px;
+
+  margin: 20px 0 20px;
+
+  color: #627168;
+
+  font-size: 0.88rem;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   HIGHLIGHT
+   ========================================================= */
+
+.sm-footer-highlight {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 9px 15px;
+
+  border-radius: 50px;
+
+  background: #eef8f1;
+
+  border: 1px solid #d7eadc;
+
+  color: #286b42;
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+}
+
+.sm-highlight-icon {
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   QUOTE CARD
+   ========================================================= */
+
+.sm-footer-quote-card {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 35px 30px;
+
+  text-align: center;
+
+  border-radius: 26px;
+
+  background: linear-gradient(
+    145deg,
+    #0f4d2e 0%,
+    #1b6b3a 65%,
+    #267747 100%
+  );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 15px 35px rgba(15, 77, 46, 0.15);
+
+  overflow: hidden;
+}
+
+
+/* subtle shine */
+
+.sm-footer-quote-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -80px;
+  top: -80px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.sm-footer-quote-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  left: -55px;
+  bottom: -55px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================================
+   QUOTE ICON
+   ========================================================= */
+
+.sm-quote-icon {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  margin-bottom: 15px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.14);
+
+  color: #dff4e5;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   QUOTE TEXT
+   ========================================================= */
+
+.sm-quote {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 1.15rem;
+
+  font-weight: 600;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   QUOTE DIVIDER
+   ========================================================= */
+
+.sm-quote-divider {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin: 17px 0 12px;
+
+  color: #ffb5b5;
+}
+
+.sm-quote-divider span {
+  width: 42px;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.sm-quote-divider svg {
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   QUOTE SMALL
+   ========================================================= */
+
+.sm-quote-small {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 0.78rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.sm-growing-badge {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 18px;
+
+  padding: 7px 14px;
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  color: #e7f7eb;
+
+  font-size: 0.7rem;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   BOTTOM BAR
+   ========================================================= */
+
+.sm-footer-bottom {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 17px 0;
+
+  border-top: 1px solid #dfe9e2;
+
+  color: #718078;
+
+  font-size: 0.76rem;
+}
+
+.sm-copyright strong {
+  color: #3f5d4c;
+}
+
+.sm-footer-made {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.sm-footer-made svg {
+  color: #e05252;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+  .sm-footer-main {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+
+    padding: 45px 0 35px;
+  }
+
+  .sm-footer-brand-card {
+    max-width: 680px;
+
+    margin: 0 auto;
+
+    width: 100%;
+  }
+
+  .sm-footer-quote-card {
+    max-width: 680px;
+
+    width: 100%;
+
+    margin: 0 auto;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+  .sm-footer-main {
+    gap: 22px;
+
+    padding: 32px 0 28px;
+  }
+
+  .sm-footer-brand-card {
+    padding: 23px 20px;
+
+    border-radius: 20px;
+  }
+
+  .sm-footer-brand-top {
+    gap: 11px;
+  }
+
+  .sm-footer-logo-box {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 17px;
+  }
+
+  .sm-brand {
+    font-size: 1.3rem;
+  }
+
+  .sm-tagline {
+    font-size: 0.69rem;
+  }
+
+  .sm-footer-description {
+    margin-top: 16px;
+
+    font-size: 0.81rem;
+
+    line-height: 1.65;
+  }
+
+  .sm-footer-highlight {
+    font-size: 0.68rem;
+
+    padding: 8px 12px;
+  }
+
+  .sm-footer-quote-card {
+    padding: 28px 18px;
+
+    border-radius: 20px;
+  }
+
+  .sm-quote {
+    font-size: 0.98rem;
+  }
+
+  .sm-quote-small {
+    font-size: 0.72rem;
+  }
+
+  .sm-growing-badge {
+    font-size: 0.65rem;
+  }
+
+  .sm-footer-bottom {
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 7px;
+
+    padding: 14px 0;
+  }
+
+  .sm-footer-leaf {
+    opacity: 0.1;
+  }
+
+  .sm-leaf-one {
+    font-size: 50px;
+  }
+
+  .sm-leaf-two {
+    font-size: 45px;
+  }
+}

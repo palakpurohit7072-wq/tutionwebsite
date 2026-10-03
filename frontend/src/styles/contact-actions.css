@@ -1,0 +1,234 @@
+/* COMMON CONTACT ACTIONS */
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.contact-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.contact-action-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* HERO */
+
+.contact-actions-hero {
+  margin-bottom: 32px;
+}
+
+.contact-actions-hero .contact-action-whatsapp {
+  background-color: #1f7a3d;
+  color: #fff;
+  border: 1.5px solid #1f7a3d;
+}
+
+.contact-actions-hero .contact-action-whatsapp:hover {
+  background-color: #17602f;
+  border-color: #17602f;
+  color: #fff;
+}
+
+.contact-actions-hero .contact-action-call {
+  background-color: #fff;
+  color: #1f7a3d;
+  border: 1.5px solid #1f7a3d;
+}
+
+.contact-actions-hero .contact-action-call:hover {
+  background-color: #f2f9f2;
+  color: #1f7a3d;
+}
+
+/* CONTACT */
+
+.contact-actions-contact {
+  justify-content: center;
+  width: 100%;
+}
+
+.contact-actions-contact .contact-action-whatsapp {
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+}
+
+.contact-actions-contact .contact-action-whatsapp:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.contact-actions-contact .contact-action-call {
+  color: #0f4d2e;
+  background: #fff;
+  border: 2px solid #fff;
+}
+
+.contact-actions-contact .contact-action-call:hover {
+  color: #0f4d2e;
+  background: #f1f7f3;
+}
+
+/* CALL POPUP */
+
+.contact-call-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+}
+
+.contact-call-modal {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: 36px 28px 28px;
+  border-radius: 20px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.contact-call-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: #f1f1f1;
+  color: #555;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.contact-call-modal-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: #e8f7ee;
+  font-size: 28px;
+}
+
+.contact-call-modal-title {
+  margin-bottom: 6px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #17342a;
+}
+
+.contact-call-modal-sub {
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: #5b6b64;
+}
+
+.contact-call-modal-number {
+  margin-bottom: 20px;
+  padding: 14px;
+  border: 1px dashed #b7e2c8;
+  border-radius: 12px;
+  background: #f2f9f2;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #1f7a3d;
+}
+
+.contact-call-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-call-modal-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contact-call-modal-copy {
+  background: #1f7a3d;
+  color: #fff;
+}
+
+.contact-call-modal-whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+/* NAVBAR */
+
+.contact-actions-navbar {
+  margin-left: 0;
+}
+
+.contact-actions-navbar .contact-action-whatsapp {
+  padding: 8px 18px;
+  border-radius: 8px;
+  background: #1f7a3d;
+  color: #fff;
+  border: 1px solid #1f7a3d;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.contact-actions-navbar .contact-action-whatsapp:hover {
+  background: #17602f;
+  border-color: #17602f;
+  color: #fff;
+}
+@media (max-width: 575px) {
+  .contact-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .contact-action-btn {
+    width: 100%;
+  }
+
+  .contact-call-modal {
+    max-width: 380px;
+    padding: 34px 22px 24px;
+  }
+
+  .contact-call-modal-number {
+    font-size: 22px;
+  }
+}

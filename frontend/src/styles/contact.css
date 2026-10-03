@@ -1,0 +1,89 @@
+/* Handwritten font - add this link in index.html <head>:
+   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"> */
+
+.cta-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 28px 32px 28px 110px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #0f4d2e 0%, #1b6b3a 60%, #145a32 100%);
+  color: #fff;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+.cta-leaves {
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+}
+
+.cta-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.cta-text {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Buttons */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 26px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+}
+
+.cta-btn-outline {
+  color: #fff;
+  border: 2px solid #fff;
+  background: transparent;
+}
+
+.cta-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.cta-btn-light {
+  color: #0f4d2e;
+  background: #fff;
+  border: 2px solid #fff;
+}
+
+.cta-btn-light:hover {
+  color: #0f4d2e;
+  background: #f1f7f3;
+}
+
+/* Handwritten text on right */
+.cta-script {
+  font-family: "Caveat", cursive;
+  font-size: 1.8rem;
+  line-height: 1.1;
+  text-align: center;
+  transform: rotate(-8deg);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .cta-banner {
+    padding: 28px 18px;
+  }
+  .cta-title {
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,164 @@
+
+.sm-navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.sm-navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1030;
+}
+/* Brand */
+.sm-brand-icon {
+  color: #1a7a4c;
+  font-size: 28px;
+  margin-right: 8px;
+}
+
+.sm-brand-text {
+  line-height: 1.1;
+}
+
+.sm-title {
+  font-weight: 800;
+  font-size: 22px;
+  color: #112233;
+}
+
+.sm-title span {
+  color: #1a7a4c;
+}
+
+.sm-tagline {
+  font-size: 12px;
+  color: #6c757d;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* Links */
+.sm-navbar .nav-link {
+  position: relative;
+  margin: 0 8px;
+  padding: 8px 14px !important;
+  border-radius: 8px;
+  color: #1e2a35 !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.sm-navbar .nav-link:hover {
+  color: #1a7a4c !important;
+  background-color: #e8f6ef;
+}
+
+.sm-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #1a7a4c;
+  transition: width 0.3s ease;
+}
+
+.sm-navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Enquire button */
+.sm-btn-enquire {
+  background: linear-gradient(135deg, #1a7a4c, #0d5c36);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 24px;
+  font-weight: 600;
+}
+
+.sm-btn-enquire:hover {
+  color: #fff;
+  opacity: 0.9;
+}
+
+/* ---------- Tablet & Mobile ---------- */
+/* ---------- Tablet & Mobile ---------- */
+@media (max-width: 991px) {
+  .sm-navbar {
+    padding: 10px 0;
+  }
+
+  /* logo and hamburger always on the same row */
+  .sm-navbar .navbar-brand {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-right: 8px;
+  }
+
+  .sm-navbar .navbar-toggler {
+    flex-shrink: 0;
+    margin-left: auto;
+    padding: 6px 10px;
+    border: 1px solid #d5e9df;
+    border-radius: 10px;
+  }
+
+  .sm-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(26, 122, 76, 0.2);
+  }
+  /* menu khula ho to hamburger ki jagah cross (X) dikhao */
+  .sm-navbar .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M6 6l18 18M24 6L6 24'/%3e%3c/svg%3e");
+  }
+  /* opened menu area */
+  .sm-navbar .navbar-collapse {
+    margin-top: 10px;
+    padding: 8px 0 12px;
+    border-top: 1px solid #eef2f0;
+  }
+
+  .sm-navbar .navbar-nav {
+    gap: 2px;
+  }
+
+  .sm-navbar .nav-link {
+    margin: 0;
+    padding: 12px 14px !important;
+    border-radius: 10px;
+  }
+
+  /* active link highlight on mobile */
+  .sm-navbar .nav-link.active {
+    color: #1a7a4c !important;
+    background-color: #e8f6ef;
+  }
+
+  /* underline animation mobile me hatao (background hover kaafi hai) */
+  .sm-navbar .nav-link::after {
+    display: none;
+  }
+
+  /* full width button */
+  .sm-btn-enquire {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 12px 0 4px;
+    padding: 12px 24px;
+  }
+}
+
+/* ---------- Small phones ---------- */
+@media (max-width: 400px) {
+  .sm-title {
+    font-size: 18px;
+  }
+
+  .sm-tagline {
+    font-size: 10px;
+  }
+
+  .sm-brand-icon {
+    font-size: 22px;
+    margin-right: 6px;
+  }
+}
